@@ -1,0 +1,12 @@
+diff --git a/node_modules/webpack/lib/ids/DeterministicModuleIdsPlugin.js b/node_modules/webpack/lib/ids/DeterministicModuleIdsPlugin.js
+index 6fff942..34889ff 100644
+--- a/node_modules/webpack/lib/ids/DeterministicModuleIdsPlugin.js
++++ b/node_modules/webpack/lib/ids/DeterministicModuleIdsPlugin.js
+@@ -57,6 +57,7 @@ class DeterministicModuleIdsPlugin {
+ 								usedIds.add(`${id}`);
+ 								if (size === usedIds.size) return false;
+ 								chunkGraph.setModuleId(module, id);
++								console.log(`>> webpack setModuleId "${id}" to "${getFullModuleName(module, context, compiler.root)}"`)
+ 								return true;
+ 							},
+ 							[Math.pow(10, maxLength)],
